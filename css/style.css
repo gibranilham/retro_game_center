@@ -23,14 +23,13 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  padding: 0 24px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: var(--ink);
   font-family: "Press Start 2P", monospace;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-    radial-gradient(circle at 50% 0%, #303030 0%, var(--bg) 42rem);
-  background-size: 14px 14px, 14px 14px, auto;
+  background: #1E1E1E;
 }
 
 a {
@@ -44,12 +43,19 @@ a {
 
 .home-shell,
 .game-shell {
-  width: min(100%, 920px);
+  width: min(100%, 390px);
+  min-height: 95vh;
   margin: 0 auto;
+  border: 2px solid var(--ink);
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, #303030 0%, var(--bg) 42rem);
+  background-size: 14px 14px, 14px 14px, auto;
 }
 
 .home-shell {
-  padding: clamp(24px, 6vw, 58px) 0;
+  padding: 24px 16px 32px;
 }
 
 .home-header {
@@ -61,7 +67,7 @@ a {
 .subtitle,
 .game-meta {
   color: var(--ink-dim);
-  font-size: clamp(0.5rem, 1.8vw, 0.72rem);
+  font-size: 9px;
   line-height: 1.8;
 }
 
@@ -84,7 +90,8 @@ a {
 .game-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(10px, 2.5vw, 22px);
+  column-gap: 12px;
+  row-gap: 12px;
 }
 
 .game-card {
@@ -95,16 +102,16 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(8px, 2vw, 16px);
+  gap: 5px;
   overflow: hidden;
-  border: 3px solid var(--line);
+  border: 2px solid var(--line);
   color: var(--ink);
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.035), transparent 44%),
     var(--panel);
   text-align: center;
   text-decoration: none;
-  box-shadow: 0 8px 0 var(--shadow);
+  box-shadow: 0 5px 0 var(--shadow);
 }
 
 .game-card-active {
@@ -126,24 +133,26 @@ a {
 }
 
 .game-title {
-  max-width: calc(100% - 16px);
-  font-size: clamp(0.55rem, 2.3vw, 0.96rem);
-  line-height: 1.5;
+  max-width: calc(100% - 8px);
+  font-size: 9px;
+  line-height: 1.35;
   overflow-wrap: anywhere;
 }
 
 .game-icon {
   position: relative;
   display: grid;
-  width: clamp(36px, 10vw, 68px);
+  width: 36px;
   aspect-ratio: 1;
   place-items: center;
   color: var(--ink);
-  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-size: 36px;
 }
 
 .game-icon-snake {
-  border: 4px solid var(--ink);
+  border: 3px solid var(--ink);
+  font-size: 18px;
+  line-height: 1;
 }
 
 .game-icon-snake::before,
@@ -154,17 +163,17 @@ a {
 }
 
 .game-icon-snake::before {
-  width: 6px;
-  height: 6px;
-  right: 8px;
-  top: 8px;
+  width: 4px;
+  height: 4px;
+  right: 6px;
+  top: 6px;
 }
 
 .game-icon-snake::after {
-  width: 18px;
-  height: 6px;
-  left: -14px;
-  bottom: 8px;
+  width: 10px;
+  height: 4px;
+  left: -8px;
+  bottom: 6px;
 }
 
 .game-icon-blocks,
@@ -198,8 +207,10 @@ a {
 }
 
 .game-icon-slot {
-  border: 4px dashed var(--ink-dim);
+  border: 3px dashed var(--ink-dim);
   color: var(--ink-dim);
+  font-size: 18px;
+  line-height: 1;
 }
 
 .active-dot {
@@ -224,17 +235,19 @@ a {
 }
 
 .game-shell {
-  padding: 14px 0 32px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 16px 32px;
 }
 
 .screen-header {
   position: static;
   display: grid;
-  grid-template-columns: minmax(72px, 1fr) auto minmax(72px, 1fr);
+  grid-template-columns: minmax(64px, 1fr) minmax(0, auto) minmax(64px, 1fr);
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   width: 100%;
-  padding: 14px 14px;
+  padding: 10px 8px;
   border-bottom: 3px solid var(--line);
   background: var(--panel);
   text-align: left;
@@ -242,33 +255,29 @@ a {
 }
 
 .screen-header::before {
-  position: absolute;
-  inset: 0 calc(50% - 50vw);
-  z-index: -1;
-  content: "";
-  background: var(--panel);
-  border-bottom: 3px solid var(--line);
+  content: none;
 }
 
 .screen-header h1 {
   margin: 0;
-  font-size: clamp(0.92rem, 4vw, 1.5rem);
+  font-size: clamp(0.58rem, 3vw, 0.95rem);
   line-height: 1.4;
   text-align: center;
 }
 
 .btn {
   display: inline-grid;
-  min-height: 38px;
+  min-height: 32px;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--line-hot);
-  padding: 0 12px;
+  padding: 0 8px;
   color: var(--ink);
   background: #202020;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 4px 0 var(--shadow);
+  font-size: clamp(0.48rem, 2.6vw, 0.75rem);
+  box-shadow: 0 3px 0 var(--shadow);
 }
 
 .btn:hover,
@@ -279,12 +288,12 @@ a {
 
 .back-btn {
   justify-self: start;
-  min-width: 72px;
+  min-width: 64px;
 }
 
 .restart-btn {
   justify-self: end;
-  min-width: 72px;
+  min-width: 64px;
 }
 
 .score-bar {
@@ -299,13 +308,17 @@ a {
 
 .console-panel {
   display: grid;
+  flex: 1;
+  grid-template-rows: auto minmax(190px, 1fr);
   justify-items: center;
+  align-items: stretch;
   gap: 18px;
 }
 
 #gameCanvas {
   display: block;
-  width: min(90vw, 480px);
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 1;
   height: auto;
   border: 5px solid var(--line-hot);
@@ -315,10 +328,12 @@ a {
 }
 
 .dpad {
-  display: none;
+  display: grid;
   grid-template-columns: repeat(3, 64px);
   grid-template-rows: repeat(3, 64px);
+  align-self: center;
   gap: 10px;
+  margin: auto 0;
 }
 
 .dpad-btn {
@@ -336,43 +351,4 @@ a {
 
 .dpad-btn:active {
   background: #3a3a3a;
-}
-
-@media (pointer: coarse) {
-  .game-shell {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  .console-panel {
-    flex: 1;
-    grid-template-rows: auto minmax(190px, 1fr);
-    align-items: stretch;
-  }
-
-  .dpad {
-    display: grid;
-    align-self: center;
-    margin: auto 0;
-  }
-}
-
-@media (max-width: 560px) {
-  .home-shell {
-    width: min(100%, 920px);
-  }
-
-  .game-grid {
-    gap: 8px;
-  }
-
-  .game-card {
-    border-width: 2px;
-    box-shadow: 0 5px 0 var(--shadow);
-  }
-
-  .score-bar {
-    flex-wrap: wrap;
-  }
 }
