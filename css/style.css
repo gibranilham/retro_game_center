@@ -23,6 +23,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
+  padding: 0 24px;
   color: var(--ink);
   font-family: "Press Start 2P", monospace;
   background:
@@ -43,7 +44,7 @@ a {
 
 .home-shell,
 .game-shell {
-  width: min(100% - 24px, 920px);
+  width: min(100%, 920px);
   margin: 0 auto;
 }
 
@@ -359,7 +360,7 @@ a {
 
 @media (max-width: 560px) {
   .home-shell {
-    width: min(100% - 16px, 920px);
+    width: min(100%, 920px);
   }
 
   .game-grid {
