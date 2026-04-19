@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100svh;
   margin: 0;
   padding: 0 16px;
   display: flex;
@@ -44,7 +44,7 @@ a {
 .home-shell,
 .game-shell {
   width: min(100%, 390px);
-  min-height: 95vh;
+  height: min(95svh, 844px);
   margin: 0 auto;
   border: 2px solid var(--ink);
   background:
@@ -55,11 +55,12 @@ a {
 }
 
 .home-shell {
-  padding: 24px 16px 32px;
+  overflow: hidden;
+  padding: 20px 16px 24px;
 }
 
 .home-header {
-  margin-bottom: clamp(24px, 5vw, 44px);
+  margin-bottom: 22px;
   text-align: center;
 }
 
@@ -72,7 +73,7 @@ a {
 }
 
 .kicker {
-  margin: 0 0 16px;
+  margin: 0 0 12px;
 }
 
 .home-header h1 {
@@ -84,7 +85,7 @@ a {
 }
 
 .subtitle {
-  margin: 18px 0 0;
+  margin: 14px 0 0;
 }
 
 .game-grid {
