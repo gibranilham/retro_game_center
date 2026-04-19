@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snake | Retro Game Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="game-shell" aria-labelledby="game-title">
+    <header class="screen-header">
+      <a class="btn back-btn" href="../index.html" aria-label="Back to game center">BACK</a>
+      <h1 id="game-title">SNAKE</h1>
+      <button class="btn restart-btn" id="restartButton" type="button">RESET</button>
+    </header>
+
+    <section class="score-bar" aria-label="Score board">
+      <span>SCORE: <output id="scoreValue">000</output></span>
+      <span>BEST: <output id="bestValue">000</output></span>
+    </section>
+
+    <section class="console-panel" aria-label="Snake game">
+      <canvas id="gameCanvas" width="480" height="480" aria-label="Snake game board"></canvas>
+
+      <nav class="dpad" aria-label="Touch direction controls">
+        <span></span>
+        <button class="dpad-btn" type="button" data-direction="up" aria-label="Move up">▲</button>
+        <span></span>
+        <button class="dpad-btn" type="button" data-direction="left" aria-label="Move left">◀</button>
+        <span></span>
+        <button class="dpad-btn" type="button" data-direction="right" aria-label="Move right">▶</button>
+        <span></span>
+        <button class="dpad-btn" type="button" data-direction="down" aria-label="Move down">▼</button>
+        <span></span>
+      </nav>
+    </section>
+  </main>
+
+  <script src="../js/snake.js"></script>
+</body>
+</html>
