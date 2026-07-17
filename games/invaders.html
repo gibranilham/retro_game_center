@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invaders | Retro Game Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="game-shell" aria-labelledby="game-title">
+    <header class="screen-header">
+      <a class="btn back-btn" href="../index.html" aria-label="Back to game center">BACK</a>
+      <h1 id="game-title">INVADERS</h1>
+      <button class="btn restart-btn" id="restartButton" type="button">RESET</button>
+    </header>
+
+    <section class="score-bar" aria-label="Score board">
+      <span>SCORE: <output id="scoreValue">000</output></span>
+      <span>BEST: <output id="bestValue">000</output></span>
+      <span>LIVES: <output id="livesValue">3</output></span>
+    </section>
+
+    <section class="console-panel" aria-label="Space Invaders game">
+      <canvas id="gameCanvas" width="480" height="480" aria-label="Space Invaders game board"></canvas>
+
+      <nav class="shoot-pad" aria-label="Touch controls">
+        <button class="pad-btn" type="button" data-control="left" aria-label="Move left">◀</button>
+        <button class="pad-btn fire-btn" type="button" data-control="fire" aria-label="Fire">●</button>
+        <button class="pad-btn" type="button" data-control="right" aria-label="Move right">▶</button>
+      </nav>
+    </section>
+  </main>
+
+  <script src="../js/invaders.js"></script>
+</body>
+</html>

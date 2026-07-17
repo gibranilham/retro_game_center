@@ -353,3 +353,34 @@ a {
 .dpad-btn:active {
   background: #3a3a3a;
 }
+
+.shoot-pad {
+  display: grid;
+  grid-template-columns: 64px 84px 64px;
+  align-items: center;
+  align-self: center;
+  gap: 16px;
+  margin: auto 0;
+}
+
+.pad-btn {
+  display: grid;
+  height: 64px;
+  place-items: center;
+  border: 2px solid #555555;
+  color: var(--ink);
+  background: #202020;
+  cursor: pointer;
+  font-size: 1.15rem;
+  touch-action: manipulation;
+}
+
+.pad-btn:active {
+  background: #3a3a3a;
+}
+
+.fire-btn {
+  border-color: var(--line-hot);
+  color: var(--line-hot);
+  font-size: 1.4rem;
+}
