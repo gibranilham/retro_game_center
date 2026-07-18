@@ -316,6 +316,13 @@ a {
   gap: 18px;
 }
 
+.console-panel-full {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
 #gameCanvas {
   display: block;
   width: 100%;
@@ -325,7 +332,12 @@ a {
   border: 5px solid var(--line-hot);
   background: #101010;
   image-rendering: pixelated;
+  touch-action: none;
   box-shadow: 0 10px 0 var(--shadow);
+}
+
+#gameCanvas.tall {
+  aspect-ratio: 9 / 16;
 }
 
 .dpad {
