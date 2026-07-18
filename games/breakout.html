@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Breakout | Retro Game Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="game-shell" aria-labelledby="game-title">
+    <header class="screen-header">
+      <a class="btn back-btn" href="../index.html" aria-label="Back to game center">BACK</a>
+      <h1 id="game-title">BREAKOUT</h1>
+      <button class="btn restart-btn" id="restartButton" type="button">RESET</button>
+    </header>
+
+    <section class="score-bar" aria-label="Score board">
+      <span>SCORE: <output id="scoreValue">000</output></span>
+      <span>BEST: <output id="bestValue">000</output></span>
+      <span>LIVES: <output id="livesValue">3</output></span>
+    </section>
+
+    <section class="console-panel-full" aria-label="Breakout game">
+      <canvas id="gameCanvas" class="tall" width="360" height="640" aria-label="Breakout game board"></canvas>
+    </section>
+  </main>
+
+  <script src="../js/breakout.js"></script>
+</body>
+</html>
