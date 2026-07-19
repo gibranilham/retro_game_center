@@ -14,7 +14,8 @@
   const BALL_RADIUS = 3;
   const BALL_BASE_SPEED = 110;
   const BALL_SPEED_STEP = 8;
-  const BALL_MAX_SPEED = 170;
+  const BALL_PADDLE_SPEED_STEP = 5;
+  const BALL_MAX_SPEED = 240;
   const BALL_LAUNCH_DELAY = 600;
   const BALL_MAX_BOUNCE_ANGLE = (60 * Math.PI) / 180;
 
@@ -178,11 +179,11 @@
 
   function launchBall() {
     const angle = (Math.random() - 0.5) * (BALL_MAX_BOUNCE_ANGLE * 0.6);
-    const speed = waveSpeed();
 
     ball.attached = false;
-    ball.vx = speed * Math.sin(angle);
-    ball.vy = -speed * Math.cos(angle);
+    ball.speed = waveSpeed();
+    ball.vx = ball.speed * Math.sin(angle);
+    ball.vy = -ball.speed * Math.cos(angle);
   }
 
   function resetGame() {
@@ -295,11 +296,11 @@
     ) {
       const offset = clamp((ball.x - (paddle.x + PADDLE_WIDTH / 2)) / (PADDLE_WIDTH / 2), -1, 1);
       const angle = offset * BALL_MAX_BOUNCE_ANGLE;
-      const speed = waveSpeed();
 
+      ball.speed = Math.min(BALL_MAX_SPEED, ball.speed + BALL_PADDLE_SPEED_STEP);
       ball.y = PADDLE_Y - BALL_RADIUS;
-      ball.vx = speed * Math.sin(angle);
-      ball.vy = -speed * Math.cos(angle);
+      ball.vx = ball.speed * Math.sin(angle);
+      ball.vy = -ball.speed * Math.cos(angle);
       return;
     }
 
