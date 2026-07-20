@@ -2,7 +2,7 @@
   "use strict";
 
   const BASE_WIDTH = 180;
-  const BASE_HEIGHT = 320;
+  const BASE_HEIGHT = 292;
   const storageKey = "breakout-best";
 
   const PADDLE_WIDTH = 36;
